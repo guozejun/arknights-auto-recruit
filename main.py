@@ -85,7 +85,7 @@ result = {}
 for i in range(1, 4):
     for item in itertools.combinations(tags, i):
         for role in db.recruit_database:
-            if set(item) < set(role[2]):
+            if set(item) <= set(role[2]):
                 current_tag = tag_format(item)
                 if current_tag not in result:
                     result[current_tag] = []
